@@ -6,8 +6,6 @@ AppleIntelGMA950.kext/
 AppleIntelIntegratedFramebuffer.kext/
 AppleHDA.kext/
 DspFuncLib.kext/
-VoodooPS2*.kext/
-AppleACPIPS2Nub.kext/
 HfsPlus*.efi
 VoodooPS2*.zip
 

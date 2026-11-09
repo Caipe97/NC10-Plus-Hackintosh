@@ -21,8 +21,8 @@ Raw output is in [evidence/](evidence/). The full story is in [docs/gma3150-qe-c
 | Graphics, 1024x600, cursor | Working | Patched GMA 950 kexts |
 | Quartz Extreme and Core Image | Working | [Writeup](docs/gma3150-qe-ci.md) |
 | Brightness | Working | SSDT only, no driver patch |
-| Audio (ALC269) | Working | AppleALC plus a patched AppleHDA. Pops under some games, see [known issues](docs/known-issues.md) |
-| Keyboard and touchpad | Working | 2009 VoodooPS2 with a patched trackpad driver |
+| Audio (ALC269) | Working | "Everything" install only. AppleALC plus a patched AppleHDA. Pops under some games, see [known issues](docs/known-issues.md) |
+| Keyboard and touchpad | Working | Bundled 2009 VoodooPS2. The "Everything" install adds the touchpad jump filter and two-finger scrolling |
 | USB 2.0 | Working | One OpenCore quirk |
 | Ethernet | Working | Stock AppleYukon2 |
 | S3 sleep and wake | Experimental | Worked 5 of 5 in the shipped config, but see [the writeup](docs/s3-sleep.md) before relying on it |
@@ -39,18 +39,30 @@ Raw output is in [evidence/](evidence/). The full story is in [docs/gma3150-qe-c
 
 ## Getting started
 
-The EFI in this repository is **incomplete on purpose**. It cannot boot until you build it, because Apple's kexts cannot be redistributed. The build script takes your own stock kexts, patches them, and verifies every input and output by SHA-256.
+Apple's kexts can't be redistributed, so the EFI in this repository first boots without acceleration. You then run one script on the netbook, which patches the stock drivers already on your system and finishes the setup. Every input and output is verified by SHA-256.
 
-Follow [docs/INSTALL.md](docs/INSTALL.md).
+The script offers two install options:
+
+| Option | Adds to the first-boot setup |
+|---|---|
+| **Everything** | Graphics acceleration, audio and the touchpad fixes |
+| **Graphics acceleration only** | Graphics acceleration. Your audio driver stays stock, so there is no sound |
+
+The built-in keyboard and touchpad, brightness, USB 2.0 and the sleep patches come with the first-boot setup, so you get them with either option.
+
+If you already boot this netbook with your own OpenCore setup, the script can build just the two GPU kexts instead.
+
+The only extra download is `HfsPlus32.efi`. Follow [docs/INSTALL.md](docs/INSTALL.md).
 
 ## What's in the repository
 
 | Path | Contents |
 |---|---|
-| `EFI/` | OpenCore 1.0.8 IA32, config, SSDTs and the open-source kexts |
+| `EFI/` | OpenCore 1.0.8 IA32, SSDTs, the bundled kexts, and three configs: `config.plist` for the first boot, then `config.full.plist` or `config.gpu.plist` for the finished setup |
 | `legacy-boot/` | BIOS boot files, needed because this netbook has no UEFI |
 | `patches/` | The patchers that produce the working drivers |
-| `scripts/build.py` | Assembles the complete EFI from your stock files |
+| `postinstall/` | The script that finishes the install on the netbook |
+| `scripts/build.py` | Alternative: assembles the complete EFI on another machine |
 | `acpi/` | SSDT sources |
 | `config-variants/` | An alternative config with less S3 instrumentation, less reliable so far |
 | `docs/` | Installation guide and writeups |
@@ -74,4 +86,4 @@ Not affiliated with or endorsed by Apple, Samsung or Intel.
 
 ## Third-party components
 
-OpenCore, Lilu, VirtualSMC and AppleALC are from [Acidanthera](https://github.com/acidanthera), under the BSD 3-Clause licenses in [licenses/](licenses/). See [licenses/README.md](licenses/README.md) for what is and isn't bundled.
+OpenCore, Lilu, VirtualSMC and AppleALC are from [Acidanthera](https://github.com/acidanthera), under the BSD 3-Clause licenses in [licenses/](licenses/). VoodooPS2 is a 2009 community build with no stated license. See [licenses/README.md](licenses/README.md) for what is and isn't bundled.

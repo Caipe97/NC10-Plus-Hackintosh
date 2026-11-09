@@ -2,9 +2,12 @@
 """Accelerator patch for the thin i386 AppleIntelGMA950 binary (10A432). File offsets.
  ID spoof in probe/start; status page via GTT slot 0x1fffe; ring started like Linux;
  Apple's fence 6/7 setup is kept, because its tiled pools depend on it.  usage: patch_gma.py IN OUT"""
-import struct,sys
-ID=bytes.fromhex('b88680a227')
-HWS=bytes.fromhex(
+from __future__ import print_function  # runs on Python 3 and on the Python 2.6 in Mac OS X 10.6
+import binascii,struct,sys
+def unhex(s): return binascii.unhexlify(s.replace(' ','').encode('ascii'))
+def unpack(f,b): return struct.unpack(f,bytes(b))
+ID=unhex('b88680a227')
+HWS=unhex(
  '8b83480a0000'     # mov eax,[ebx+0xa48]        ; phys of status page
  '83c807'           # or  eax,7                  ; valid + snooped, as i915 did
  '8b8be8090000'     # mov ecx,[ebx+0x9e8]        ; GTT mapping
@@ -22,21 +25,21 @@ P=[
  ('engine: skip IP ring and 0x20c0',0x19221,None,b'\xeb\x72'),
 ]
 d=bytearray(open(sys.argv[1],'rb').read())
-ncmds=struct.unpack('<I',d[16:20])[0]; p=28; rel=set(); delta=None
+ncmds=unpack('<I',d[16:20])[0]; p=28; rel=set(); delta=None
 for _ in range(ncmds):
-    cmd,sz=struct.unpack('<II',d[p:p+8])
+    cmd,sz=unpack('<II',d[p:p+8])
     if cmd==1:
-        for i in range(struct.unpack('<I',d[p+48:p+52])[0]):
+        for i in range(unpack('<I',d[p+48:p+52])[0]):
             q=p+56+68*i
             if d[q:q+16].rstrip(b'\0')==b'__text':
-                a,s,o,al,ro,nr=struct.unpack('<6I',d[q+32:q+56]); delta=o-a
+                a,s,o,al,ro,nr=unpack('<6I',d[q+32:q+56]); delta=o-a
                 for k in range(nr):
-                    w0,w1=struct.unpack('<II',d[ro+8*k:ro+8*k+8])
+                    w0,w1=unpack('<II',d[ro+8*k:ro+8*k+8])
                     rel.add((w0&0xffffff if w0&0x80000000 else w0)+delta)
     p+=sz
 for name,off,old,new in P:
     if old is not None:
-        o=bytes.fromhex(old); assert bytes(d[off:off+len(o)])==o and len(o)==len(new),name
+        o=unhex(old); assert bytes(d[off:off+len(o)])==o and len(o)==len(new),name
     bad=[r for r in rel if off-3<=r<off+len(new)]
     assert not bad,(name,[hex(x) for x in bad])
     d[off:off+len(new)]=new; print('ok',hex(off),len(new),name)

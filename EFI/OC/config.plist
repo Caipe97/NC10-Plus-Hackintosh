@@ -464,60 +464,6 @@
 				<key>Arch</key>
 				<string>i386</string>
 				<key>BundlePath</key>
-				<string>AppleALC.kext</string>
-				<key>Comment</key>
-				<string>ALC269 via AppleHDA</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/AppleALC</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>i386</string>
-				<key>BundlePath</key>
-				<string>AppleIntelIntegratedFramebuffer.kext</string>
-				<key>Comment</key>
-				<string>patched GMA3150 framebuffer</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>AppleIntelIntegratedFramebuffer</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>i386</string>
-				<key>BundlePath</key>
-				<string>AppleIntelGMA950.kext</string>
-				<key>Comment</key>
-				<string>patched GMA3150 accelerator</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/AppleIntelGMA950</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>i386</string>
-				<key>BundlePath</key>
 				<string>AppleACPIPS2Nub.kext</string>
 				<key>Comment</key>
 				<string>PS/2 nub for KBC0/MSE0</string>
@@ -926,14 +872,14 @@
 			<key>AdviseFeatures</key>
 			<false/>
 			<key>MLB</key>
-			<string>W0000000000000000</string>
+			<string>W8651014YV3GD</string>
 			<key>MaxBIOSVersion</key>
 			<false/>
 			<key>ProcessorType</key>
 			<integer>0</integer>
 			<key>ROM</key>
 			<data>
-			AAAAAAAA
+			j9HrfTQO
 			</data>
 			<key>SpoofVendor</key>
 			<true/>
@@ -942,9 +888,9 @@
 			<key>SystemProductName</key>
 			<string>MacBook1,1</string>
 			<key>SystemSerialNumber</key>
-			<string>W0000000000</string>
+			<string>W86520L3U9B</string>
 			<key>SystemUUID</key>
-			<string>00000000-0000-0000-0000-000000000000</string>
+			<string>494A67B4-C824-491D-81FC-C73CC0A6714E</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
