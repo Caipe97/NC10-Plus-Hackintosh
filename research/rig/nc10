@@ -1,0 +1,3 @@
+#!/bin/bash
+# Run a command on the netbook: NC10_HOST=address rig/nc10 'uname -a'. Set the SSH user in ~/.ssh/config.
+exec ssh "${NC10_HOST:?set NC10_HOST to the netbook address}" "$@"

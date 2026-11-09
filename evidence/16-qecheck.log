@@ -1,0 +1,18 @@
+display 0x1900fe74L
+Quartz Extreme (CGDisplayUsesOpenGLAcceleration): 1
+choose 0 1
+create 0
+current 0
+pbuffer 0
+virtual screen 0 0
+setpb 0
+renderer Intel GMA 950 OpenGL Engine
+glError 0
+inside triangle (want 255 0 0): [255, 0, 0, 255]
+cleared corner (want ~26 51 77): [25, 51, 76, 255]
+DONE
+exit=0
+[HCIController][hardwareSetupComplete] Failed setup: 0x10
+IOBluetoothHCIController::terminateWL .. done
+display: Not usable
+15:26  up 2 mins, 1 user, load averages: 0.75 0.29 0.11

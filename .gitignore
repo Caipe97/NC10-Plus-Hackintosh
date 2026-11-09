@@ -1,0 +1,21 @@
+# Build output contains patched Apple binaries. Never commit it.
+/out/
+
+# Apple and third-party binaries that must stay out of the repository
+AppleIntelGMA950.kext/
+AppleIntelIntegratedFramebuffer.kext/
+AppleHDA.kext/
+DspFuncLib.kext/
+VoodooPS2*.kext/
+AppleACPIPS2Nub.kext/
+HfsPlus*.efi
+VoodooPS2*.zip
+
+# Local rig and working files
+*.tar
+*.iso
+*.dmg
+research/logs/
+research/rig/logs/
+.DS_Store
+__pycache__/

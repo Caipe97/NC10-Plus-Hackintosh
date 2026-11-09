@@ -1,0 +1,7 @@
+start: reboots logged 78, 5 cycles of 60s
+cycle 1: ok, back at +65s; Nov  9 07:12:54 nc10 kernel[0]: Wake reason = RTC EUSB
+cycle 2: ok, back at +64s; Nov  9 07:14:39 nc10 kernel[0]: Wake reason = RTC EUSB
+cycle 3: ok, back at +61s; Nov  9 07:16:20 192 kernel[0]: Wake reason = RTC EUSB
+cycle 4: ok, back at +61s; Nov  9 07:18:00 192 kernel[0]: Wake reason = RTC EUSB
+cycle 5: ok, back at +61s; Nov  9 07:19:40 nc10 kernel[0]: Wake reason = RTC EUSB
+ALL 5 CYCLES PASSED

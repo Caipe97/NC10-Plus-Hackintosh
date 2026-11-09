@@ -1,0 +1,4 @@
+start: reboots logged 80, 5 cycles of 60s
+cycle 1: ok, back at +64s; Nov  9 07:22:44 192 kernel[0]: Wake reason = RTC EUSB
+cycle 2: ok, back at +64s; Nov  9 07:24:29 nc10 kernel[0]: Wake reason = RTC EUSB
+cycle 3: FAILED, no network 130s after sleep

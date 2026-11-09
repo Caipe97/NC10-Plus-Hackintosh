@@ -1,0 +1,12 @@
+48
+pixel formats 1
+renderer Intel GMA 950 OpenGL Engine
+FAIL Alpha8 left got [255, 255, 255, 128] want [0, 0, 0, 128]
+FAIL Alpha8 right got [255, 255, 255, 64] want [0, 0, 0, 64]
+FAIL Blend 50% red got [139, 26, 38, 191] want [140, 25, 38, 255]
+glError 0
+RESULT 48 passed, 3 failed of 51
+DONE
+
+AFP_VFS afpfs_mount: /Volumes/File Sharing, pid 152
+15:50  up 10 mins, 1 user, load averages: 0.45 0.68 0.48

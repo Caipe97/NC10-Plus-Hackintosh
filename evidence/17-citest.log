@@ -1,0 +1,8 @@
+CI gpu-requested fps 22.6
+CI software fps 26.9
+fragment programs: True vertex programs: True
+GL soak frames 5386 fps 179.5 glError 0
+DONE
+IOBluetoothHCIController::terminateWL .. done
+display: Not usable
+15:27  up 3 mins, 1 user, load averages: 0.36 0.27 0.11

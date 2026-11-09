@@ -1,0 +1,25 @@
+renderer Intel GMA 950 OpenGL Engine
+ci context True software requested False
+  fps 44.44, samples [255, 255, 255, 255] [246, 246, 246, 255] glError 0
+ci context True software requested True
+  fps 15.81, samples [255, 255, 255, 255] [244, 244, 244, 255] glError 0
+GPU 44.44 fps, CPU 15.81 fps
+DONE
+---MODES
+count 12
+current (1024, 600, 32, 0)
+0 (1024, 600, 8, 0)
+1 (1024, 600, 16, 0)
+2 (1024, 600, 32, 0)
+3 (640, 480, 8, 0)
+4 (640, 480, 16, 0)
+5 (640, 480, 32, 0)
+6 (640, 480, 8, 0)
+7 (640, 480, 16, 0)
+8 (640, 480, 32, 0)
+9 (800, 600, 8, 0)
+10 (800, 600, 16, 0)
+11 (800, 600, 32, 0)
+
+AFP_VFS afpfs_mount: /Volumes/File Sharing, pid 152
+15:51  up 11 mins, 1 user, load averages: 0.63 0.67 0.49

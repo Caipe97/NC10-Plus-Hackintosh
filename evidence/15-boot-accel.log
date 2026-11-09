@@ -1,0 +1,21 @@
+15:25  up 59 secs, 1 user, load averages: 1.02 0.27 0.10
+pple.driver.AppleIntelIntegratedFramebuffer (6.0.0) <28 14 13 11 7 5 4 3 1>
+pple.driver.AppleIntelGMA950 (6.0.0) <30 28 13 10 7 5 4 3 1>
+inst=9
+dock=90
+dyld: loaded: /System/Library/Extensions/AppleIntelGMA950GLDriver.bundle/Contents/MacOS/AppleIntelGMA950GLDriver
+query 0 renderers 2
+ renderer 0 0x1024000L accelerated 1 vram 67108864
+ renderer 1 0x1020400L accelerated 0 vram 0
+choose 0 pixel formats 1
+create 0
+vendor Intel Inc.
+renderer Intel GMA 950 OpenGL Engine
+version 1.4 APPLE-1.6.0
+extensions 83
+glError 0
+DONE
+---SP
+          Resolution: 1024 x 600
+---KLOG
+    | |   |   |   "PerformanceStatistics" = {"surfaceCount"=3,"lastReadStamp"=748,"textureWaitTime"=0,"volatileSurfaceCount"=0,"swapComplete2DWaitTime"=0,"contextGLSwitchCount"=0,"freeSurfaceBackingWaitTime"=0,"IOSurface

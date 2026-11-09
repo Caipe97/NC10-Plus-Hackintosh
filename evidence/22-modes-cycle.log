@@ -1,0 +1,15 @@
+15:52:21 switch (1024, 600, 8, 0) err 0
+15:52:27 switch (1024, 600, 16, 0) err 0
+15:52:33 switch (1024, 600, 32, 0) err 0
+15:52:38 switch (640, 480, 8, 0) err 0
+15:52:45 switch (640, 480, 16, 0) err 0
+15:52:51 switch (640, 480, 32, 0) err 0
+15:52:56 switch (800, 600, 8, 0) err 0
+15:53:02 switch (800, 600, 16, 0) err 0
+15:53:08 switch (800, 600, 32, 0) err 0
+15:53:13 restore (1024, 600, 32, 0) err 0
+DONE
+ASP_TCP CheckReqQueueSize: increasing req queue from 32 to 128 entries. so 0x579c990 
+
+AFP_VFS afpfs_mount: /Volumes/File Sharing, pid 152
+15:53  up 13 mins, 1 user, load averages: 0.47 0.61 0.48
